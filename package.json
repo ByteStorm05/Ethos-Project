@@ -16,9 +16,11 @@
     "cobe": "^0.6.3",
     "framer-motion": "^11.5.6",
     "lucide-react": "^0.445.0",
+    "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
+    "react-dropzone": "^14.2.3",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },

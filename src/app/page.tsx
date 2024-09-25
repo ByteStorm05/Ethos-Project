@@ -1,17 +1,18 @@
 'use client';
 
-import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
+import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect"; // Check if this is needed
 import Image from "next/image";
-import { ThemeProvider } from '../context/ThemeContext';
-import { ThemeToggle } from '../components/ThemeToggle';
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { MultiStepLoader } from "@/components/ui/multi-step-loader";
+import { ThemeProvider } from '../context/ThemeContext'; // Verify this path
+import { ThemeToggle } from '../components/ThemeToggle'; // Verify this path
+import { ContainerScroll } from "@/components/ui/container-scroll-animation"; // Check if this is needed
+import { MultiStepLoader } from "@/components/ui/multi-step-loader"; // Ensure this component is correctly exported
 import { useState } from "react";
-import { Timeline } from "@/components/ui/timeline"; 
-import { WobbleCard } from "@/components/ui/wobble-card";
-import { BentoGrid } from "@/components/ui/bento-grid"; 
-import FeaturesSectionDemo from "@/components/blocks/features-section-demo-1";
-import { FeaturesSectionDemoFinal } from "../components/ui/Features";
+import { Timeline } from "@/components/ui/timeline"; // Ensure this component is correctly exported
+import { BentoGrid } from "@/components/ui/bento-grid"; // Check if this is needed
+import FeaturesSectionDemo from "@/components/blocks/features-section-demo-1"; // Verify this path
+import { FeaturesSectionDemoFinal } from "../components/ui/Features"; // Ensure this component is correctly exported
+import {Herohome} from '../components/ui/Hero-home'
+import Link from "next/link";
 
 const loadingStates = [
   { text: "You visit abc.com" },
@@ -35,30 +36,53 @@ export default function Home() {
   return (
     <ThemeProvider>
       <ThemeToggle />
-      <div className="flex flex-col overflow-hidden">
-        {/* Button to trigger loading */}
-        <div className="flex justify-center py-10">
-         
-          <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50" onClick={handleClick} >
-  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-xl font-medium text-white backdrop-blur-3xl">
-    Click here to know what we do
-  </span>
-</button>
-        </div>
+      
+      <Herohome></Herohome>
+    
 
-        {/* MultiStepLoader component */}
-        {loading && <MultiStepLoader loadingStates={loadingStates} loading={loading} />}
+      <div className="flex flex-col overflow-hidden">
+        
+
+      <div className="py-10">
+  <h2 className="text-3xl font-bold text-center">Watch Our Introduction</h2>
+  <div className="flex justify-center mt-6">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/your-video-id"
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
+
 
         {/* Timeline Section */}
-        <div className="py-10">
-          <h1 className="text-3xl font-bold text-center">A detailed walkthrough is all you need!</h1>
-          <TimelineDemo />
-        </div>
+
+        <div className="py-10" id="timeline-section">
+  <div className="mt-8 max-w-2xl text-center mx-auto">
+    <h1 className="block font-bold text-gray-800 text-5xl md:text-7xl lg:text-6xl dark:text-neutral-200">
+      A detailed walkthrough is{" "}
+      <span className="text-lime-500 underline decoration-2 decoration-lime-400 hover:decoration-lime-600 transition duration-200">
+        all you need
+      </span>
+    </h1>
+    <p className="mt-4 text-lg text-gray-600 dark:text-neutral-400">
+      Discover step-by-step instructions and insights to guide you through the process effectively.
+    </p>
+    
+  </div>
+
+  <TimelineDemo />
+</div>
+
+
 
         {/* BentoGrid Section */}
         <div className="py-10">
-          <h2 className="text-2xl font-bold text-center">Explore Our Features</h2>
+          <h2 className="text-6xl font-bold text-center py-10">Explore Our Features</h2>
           <FeaturesSectionDemoFinal />
         </div>
 
@@ -87,19 +111,19 @@ export function TimelineDemo() {
       title: "Step 1",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-xl md:text-xl font-normal mb-8">
             You can go here and upload the image/video you want to test
           </p>
           <div className="flex justify-center">
-            <div className="flex justify-center">
-              <Image
-                src=""
-                alt="startup template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-            </div>
+          <div className="relative w-44 h-44 md:w-60 md:h-60 lg:w-80 lg:h-80 overflow-hidden rounded-lg">
+    <Image
+      src="/upload-image.jpg" // Ensure the path is correct
+      alt="Startup Template"
+      layout="fill" // Makes the image fill the container
+      objectFit="contain" // Ensures the image is contained within the area without distortion
+      className="transition-transform duration-300 transform hover:scale-110 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+    />
+  </div>
           </div>
         </div>
       ),
@@ -108,30 +132,52 @@ export function TimelineDemo() {
       title: "Step 2",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Now you can upload the Validation Image
-          </p>
+        <p className="text-neutral-800 dark:text-neutral-200 text-xl md:text-xl font-normal mb-8">
+          You can go here and upload the image/video you want to test
+        </p>
+        <div className="flex justify-center">
+        <div className="relative w-44 h-44 md:w-60 md:h-60 lg:w-80 lg:h-80 overflow-hidden rounded-lg">
+  <Image
+    src="/validation-image.jpg" // Ensure the path is correct
+    alt="Startup Template"
+    layout="fill" // Makes the image fill the container
+    objectFit="contain" // Ensures the image is contained within the area without distortion
+    className="transition-transform duration-300 transform hover:scale-110 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+  />
+</div>
         </div>
+      </div>
       ),
     },
     {
       title: "Step 3",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            All we ask for is a little patience 
+          <p className="text-neutral-800 dark:text-neutral-200 text-xl md:text-xl font-normal mb-8">
+            All we ask for is a little patience :)
           </p>
         </div>
       ),
     },
     {
-      title: "And that's it !",
+      title: "And that's it!",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8 ">
-            Initiated research for new features and improvements based on user feedback.
-          </p>
+        <p className="text-neutral-800 dark:text-neutral-200 text-xl md:text-xl font-normal mb-8">
+          You can go here and upload the image/video you want to test
+        </p>
+        <div className="flex justify-center">
+        <div className="relative w-44 h-44 md:w-60 md:h-60 lg:w-80 lg:h-80 overflow-hidden rounded-lg">
+  <Image
+    src="/result-dark.jpg" // Ensure the path is correct
+    alt="Startup Template"
+    layout="fill" // Makes the image fill the container
+    objectFit="contain" // Ensures the image is contained within the area without distortion
+    className="transition-transform duration-300 transform hover:scale-110 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+  />
+</div>
         </div>
+      </div>
       ),
     },
   ];
@@ -140,5 +186,3 @@ export function TimelineDemo() {
     <Timeline data={data} /> 
   );
 }
-
-
