@@ -88,6 +88,16 @@ export const Herohome = () => {
            {/* MultiStepLoader component */}
         {loading && <MultiStepLoader loadingStates={loadingStates} loading={loading} />}
 
+
+        <div className="mt-8 flex justify-center items-center gap-x-2 sm:gap-x-4">
+            <span className="text-lg text-gray-600 dark:text-neutral-400">Test Our Model :</span>
+            
+           
+            <a className="inline-flex items-center gap-x-2 text-lg text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500" href="/test">
+            Click here to test
+              <svg className="shrink-0 size-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
           <div className="mt-8 flex justify-center items-center gap-x-2 sm:gap-x-4">
             <span className="text-lg text-gray-600 dark:text-neutral-400">Dive into the Repository:</span>
             
@@ -97,6 +107,7 @@ export const Herohome = () => {
               <svg className="shrink-0 size-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </a>
           </div>
+          
         </div>
       </div>
       {/* End Hero Section */}

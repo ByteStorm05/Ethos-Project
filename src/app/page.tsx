@@ -112,7 +112,9 @@ export function TimelineDemo() {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xl md:text-xl font-normal mb-8">
-            You can go here and upload the image/video you want to test
+            You can <Link href="/test">
+  <span className="underline text-blue-600 hover:text-blue-800">go here</span>
+</Link> and upload the image/video you want to test
           </p>
           <div className="flex justify-center">
           <div className="relative w-44 h-44 md:w-60 md:h-60 lg:w-80 lg:h-80 overflow-hidden rounded-lg">
@@ -164,7 +166,7 @@ export function TimelineDemo() {
       content: (
         <div>
         <p className="text-neutral-800 dark:text-neutral-200 text-xl md:text-xl font-normal mb-8">
-          You can go here and upload the image/video you want to test
+          You'll get your output like this 
         </p>
         <div className="flex justify-center">
         <div className="relative w-44 h-44 md:w-60 md:h-60 lg:w-80 lg:h-80 overflow-hidden rounded-lg">
