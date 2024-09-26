@@ -12,6 +12,8 @@ import { BentoGrid } from "@/components/ui/bento-grid"; // Check if this is need
 import FeaturesSectionDemo from "@/components/blocks/features-section-demo-1"; // Verify this path
 import { FeaturesSectionDemoFinal } from "../components/ui/Features"; // Ensure this component is correctly exported
 import {Herohome} from '../components/ui/Hero-home'
+import ImageGallery from "@/components/ui/ImageGallery"; // Adjust the path as necessary
+
 import Link from "next/link";
 
 const loadingStates = [
@@ -82,10 +84,10 @@ export default function Home() {
 
         {/* BentoGrid Section */}
         <div className="py-10">
-          <h2 className="text-6xl font-bold text-center py-10">Explore Our Features</h2>
-          <FeaturesSectionDemoFinal />
+          <h2 className="text-6xl font-bold text-center py-10">Explore Our Past Results</h2>
+          {/* <FeaturesSectionDemoFinal /> */}
         </div>
-
+        <ImageGallery />
         {/* Additional spacer section for longer scrolling experience */}
         <div className="h-[1000px] "></div>
       </div>
